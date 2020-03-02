@@ -1,0 +1,38 @@
+@startuml
+
+skinparam monochrome true
+
+node <img:https://raw.githubusercontent.com/micro-ROS/micro-ROS_crazyflie_demo/master/assets/images/ros2_icon.png>  as ros2 {
+  interface "/sensors/imu"   as imu
+  interface "/sensors/tof"   as tof
+  interface "/sensors/led"   as led
+}
+
+' node <img:https://docs.zephyrproject.org/1.9.0/_images/disco_l475_iot1.jpg> as st_disco
+
+' node <img:https://raw.githubusercontent.com/micro-ROS/micro-ROS_crazyflie_demo/master/assets/images/ros2_icon.png> as st_disco {}
+
+[<img:https://raw.githubusercontent.com/micro-ROS/micro-ROS_sensors_demo/master/assets/images/board.png>] as st_disco
+
+[<img:https://raw.githubusercontent.com/micro-ROS/micro-ROS_sensors_demo/master/assets/images/rqt.png>] as rqt
+
+' [<size:1><img:https://miro.medium.com/max/1731/1*2ffYio1imvHY5AMBk_twBw.png>] as rqt
+
+' [translator.py\n\n <img:https://raw.githubusercontent.com/micro-ROS/micro-ROS_crazyflie_demo/master/assets/images/translator_icon.png>] as translator
+
+note top of ros2
+    | Topic | Type |
+    | /sensors/imu | Point32 |
+    | /sensors/tof | Float32 |
+    | /sensors/led | Bool |
+end note
+
+st_disco    -up->   imu
+st_disco    -up->   tof
+st_disco    <.up.   led
+
+rqt    <-up-   imu
+rqt    <-up-   tof
+rqt    .up.>   led
+
+@endutml

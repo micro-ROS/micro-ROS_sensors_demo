@@ -1,0 +1,20 @@
+version: '3'
+services:
+    stiot_builder:
+        build: ./dockerfile/builder
+        volumes:
+            - /dev/bus/usb:/dev/bus/usb
+        privileged: true
+    stiot_agent:
+        build: ./dockerfile/agent
+        volumes:
+            - /dev/serial:/dev/serial
+        network_mode: "host"
+    stiot_rqt:
+        build: ./dockerfile/rqt
+        volumes:
+            - /tmp/.X11-unix:/tmp/.X11-unix
+        privileged: true
+        environment:
+            DISPLAY: unix:0
+        network_mode: "host"

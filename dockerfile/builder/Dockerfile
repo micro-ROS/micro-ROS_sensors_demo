@@ -5,7 +5,6 @@ WORKDIR uros_ws
 RUN git clone --depth 1 -b feature/generic_build https://github.com/micro-ROS/micro-ros-build.git src/micro-ros-build \
 &&  . /opt/ros/$ROS_DISTRO/setup.sh \
 &&  apt update \
-&&  apt install ed \
 &&  rosdep update \
 &&  rosdep install --from-paths src --ignore-src -y \
 &&  colcon build \
@@ -15,7 +14,6 @@ RUN git clone --depth 1 -b feature/generic_build https://github.com/micro-ROS/mi
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 &&  . ./install/setup.sh \
 &&  apt update \
-&&  apt install -y dfu-util \
 &&  ros2 run micro_ros_setup create_firmware_ws.sh zephyr discovery_l475_iot1 \
 &&  rm -rf /var/lib/apt/lists/*
 

@@ -24,8 +24,8 @@ docker-compose run stiot_builder
 
 2. configure and build the micro-ROS firmware inside the Docker:
 ```bash
-ros2 run micro_ros_setup configure_firmware.sh serialusb
-ros2 run micro_ros_setup build_firmware.sh sensors_publisher
+ros2 run micro_ros_setup configure_firmware.sh sensors_publisher --transport serial-usb
+ros2 run micro_ros_setup build_firmware.sh 
 ```
 
 3. connect the board using the STLink USB port

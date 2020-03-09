@@ -17,20 +17,20 @@ The following is a list of the hardware needed to reproduce this demo:
 
 ## How to build and flash the firmware?
 
-1. run the builder Docker:
+1. Run the builder Docker:
 ```bash
 docker-compose run stiot_builder
 ```
 
-2. configure and build the micro-ROS firmware inside the Docker:
+2. Configure and build the micro-ROS firmware inside the Docker:
 ```bash
 ros2 run micro_ros_setup configure_firmware.sh sensors_publisher --transport serial-usb
 ros2 run micro_ros_setup build_firmware.sh 
 ```
 
-3. connect the board using the STLink USB port
+3. Connect the board using the STLink USB port
 
-4. flash the micro-ROS firmware:
+4. Flash the micro-ROS firmware:
 ```bash
 ros2 run micro_ros_setup flash_firmware.sh
 ```
@@ -39,7 +39,9 @@ ros2 run micro_ros_setup flash_firmware.sh
 
 To start the application just one step is needed:
 
-1. up the Docker Compose:
+1. Connect host USB to your computer. You can disconnect the STLink USB port and modify the board supply jumper on the bottom layer.
+
+2. Up the Docker Compose:
 
 ```bash
 docker-compose up -d

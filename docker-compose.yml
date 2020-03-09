@@ -9,7 +9,7 @@ services:
     stiot_agent:
         build: ./dockerfile/agent
         volumes:
-            - /dev/serial:/dev/serial
+            - /dev:/dev
         network_mode: "host"
     stiot_rqt:
         build: ./dockerfile/rqt

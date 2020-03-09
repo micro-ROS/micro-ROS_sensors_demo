@@ -1,8 +1,8 @@
 version: '3'
 services:
     stiot_builder:
-        # build: ./dockerfile/builder
-        image: pablogs9/microrossensorsdemo_stiot_builder:latest 
+        build: ./dockerfile/builder
+        # image: pablogs9/microrossensorsdemo_stiot_builder:latest 
         volumes:
             - /dev/bus/usb:/dev/bus/usb
         privileged: true

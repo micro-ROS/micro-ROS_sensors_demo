@@ -7,15 +7,16 @@ The vast majority of these peripherals are out-of-the-box supported by Zephyr RT
 
 Finally, in order to test communications from the ROS 2 world to the embedded board running micro-ROS, the board is subscribed to a simple boolean topic on `/sensors/led` that will turn a LED on and off.
 
+This demo is also focused on the micro-ROS's middleware layer where eProsima Micro XRCE-DDS is the default implementation. This software, base on the [DDS-XRCE](https://www.omg.org/spec/DDS-XRCE/About-DDS-XRCE/) wire protocol, offers to micro-ROS client-server communication with the following characteristics:
+
+ * Multi-transport protocol support (UDP, TCP and Serial).
+ * Peer-to-peer communication.
+ * Server discovery.
+ * Best-effort and reliable communication.
+ * Message fragmentation.
+
 This demo aims to be an entry point for further IoT development using the STM32L4 Discovery kit IoT node, Zephyr and micro-ROS. It will also show the ease of use of the micro-ROS development environment for a ROS 2 developer.
 ![](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/micro-ROS/micro-ROS_sensors_demo/master/assets/diagrams/architecture.puml)
-
-## Purpose of the project
-
-The software is not ready for a production use.
-It has neither been developed nor tested for a specific use case.
-However, the license conditions of the applicable Open Source licenses allow you to adapt the software to your needs.
-Before using it in a safety relevant setting, make sure that the software fulfills your requirements and adjust ot according to any applicable safety standards (e.g. ISO 26262).
 
 ## Hardware
 
@@ -47,7 +48,7 @@ ros2 run micro_ros_setup flash_firmware.sh
 
 ## How to use?
 
-To start the application just one step is needed:
+To start the application just two steps are needed:
 
 1. Connect host USB to your computer. You can disconnect the STLink USB port and modify the board supply jumper on the bottom layer.
 
@@ -62,3 +63,10 @@ To stop the application just down the Docker Compose:
 ```bash
 docker-compose down
 ```
+
+## Purpose of the project
+
+The software is not ready for a production use.
+It has neither been developed nor tested for a specific use case.
+However, the license conditions of the applicable Open Source licenses allow you to adapt the software to your needs.
+Before using it in a safety relevant setting, make sure that the software fulfills your requirements and adjust ot according to any applicable safety standards (e.g. ISO 26262).

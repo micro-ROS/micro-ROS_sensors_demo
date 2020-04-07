@@ -1,14 +1,13 @@
 # micro-ROS Sensors Demo
 
 This demo illustrates how micro-ROS capabilities in combination with the [STM32L4 Discovery kit IoT node](https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html) node and [Zephyr RTOS](https://www.zephyrproject.org/).
-micro-ROS integration with common ROS 2 tools such as [RQt](http://wiki.ros.org/rqt) is shown in this demo case of use. The used board is an ST development board with a complete set of sensors and communication peripherals:  3-axis inertial units (IMU), environmental sensors (temperature, humidity and pressure), a time of flight laser ranging sensor, NFC, low-power radio and 802.11 radio devices.
+micro-ROS integration with common ROS 2 tools such as [RQt](http://wiki.ros.org/rqt) is shown in this demo case of use. The used board is an ST development board with a complete set of sensors and communication peripherals:  3-axis inertial units (IMU), environmental sensors (temperature, humidity, and pressure), a time of flight laser ranging sensor, NFC, low-power radio and 802.11 radio devices.
 
-The vast majority of these peripherals are out-of-the-box supported by Zephyr RTOS. So, by using the micro-ROS + Zephyr port, this demo case will put some of these sensors' measurements to the ROS 2 world. Concretely, the 3-axis accelomenter data will be publish on `/sensors/imu` ROS 2 topic as a three-position array of 32 bits floating point data. The range measurement of the time of flight laser sensor will be published on `/sensors/tof` ROS 2 topic. 
+The vast majority of these peripherals are out-of-the-box supported by Zephyr RTOS. So, by using the micro-ROS + Zephyr port, this demo case will put some of these sensors' measurements to the ROS 2 world. Concretely, the 3-axis accelerometer data will be published on `/sensors/imu` ROS 2 topic as a three-position array of 32 bits floating-point data. The range measurement of the time of flight laser sensor will be published on `/sensors/tof` ROS 2 topic. 
 
 Finally, in order to test communications from ROS 2 world to the embedded board running micro-ROS, the board is subscribed to a simple boolean topic on `/sensors/led` that will turn on and off a LED.
 
 This demo aims to be an entry point for further IoT development using STM32L4 Discovery kit IoT node, Zephyr and micro-ROS. It will also show the ease of use of the micro-ROS development environment for a ROS 2 developer.
-
 ![](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/micro-ROS/micro-ROS_sensors_demo/master/assets/diagrams/architecture.puml)
 
 ## Purpose of the project

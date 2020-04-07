@@ -22,7 +22,7 @@ Before using it in a safety relevant setting, make sure that the software fulfil
 The following is a list of the hardware needed to reproduce this demo:
 
 * 1 x [STM32L4 Discovery kit IoT node](https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html)
-* 1 x MicroUSB to USB cable
+* 1 x MicroUSB to USB cable.
 
 ## How to build and flash the firmware?
 

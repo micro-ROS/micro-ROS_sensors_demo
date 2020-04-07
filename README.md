@@ -1,7 +1,7 @@
 # micro-ROS Sensors Demo
 
 This demo illustrates micro-ROS capabilities in combination with the [STM32L4 Discovery kit IoT node](https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html) node and [Zephyr RTOS](https://www.zephyrproject.org/).
-micro-ROS integration with common ROS 2 tools such as [RQt](http://wiki.ros.org/rqt) are shown in this demo case of use. The used board is a ST development board with a complete set of sensors and communication peripherals:  3-axis inertial units (IMU), environmental sensors (temperature, humidity, and pressure), a time of flight laser ranging sensor, NFC, low-power radio and 802.11 radio devices.
+micro-ROS integration with common ROS 2 tools such as [RQt](http://wiki.ros.org/rqt) are shown in this demo case of use. The used board is an ST development board with a complete set of sensors and communication peripherals:  3-axis inertial units (IMU), environmental sensors (temperature, humidity, and pressure), a time of flight laser ranging sensor, NFC, low-power radio and 802.11 radio devices.
 
 The vast majority of these peripherals are out-of-the-box supported by Zephyr RTOS. So, by using the micro-ROS + Zephyr port, this demo case will put some of these sensors' measurements to the ROS 2 world. Concretely, the 3-axis accelerometer data will be published on `/sensors/imu` ROS 2 topic as a three-position array of 32 bits floating-point data. The range measurement of the time of flight laser sensor will be published on `/sensors/tof` ROS 2 topic. 
 

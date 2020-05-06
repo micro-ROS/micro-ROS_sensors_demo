@@ -39,8 +39,7 @@ ros2 run micro_ros_setup configure_firmware.sh sensors_publisher --transport ser
 ros2 run micro_ros_setup build_firmware.sh 
 ```
 
-3. Connect the board using the STLink USB port
-
+3. Connect the board using the STLink USB port and make sure the board is supplied by `5V_ST_LINK` in the bottom supply jumpers.
 4. Flash the micro-ROS firmware:
 ```bash
 ros2 run micro_ros_setup flash_firmware.sh
@@ -50,9 +49,11 @@ ros2 run micro_ros_setup flash_firmware.sh
 
 To start the application just two steps are needed:
 
-1. Connect host USB to your computer. You can disconnect the STLink USB port and modify the board supply jumper on the bottom layer.
+1. Connect host USB to your computer. You can disconnect the STLink USB port and modify the board supply jumper on the bottom layer to `5V_USB_FS`.
 
-2. Up the Docker Compose:
+2. Remember to enable X11 sharing for all hosts with: `xhost +`
+
+3. Up the Docker Compose:
 
 ```bash
 docker-compose up -d

@@ -1,4 +1,4 @@
-FROM ros:dashing
+FROM ros:foxy
 
 RUN apt update \
 &&  apt install -y ros-dashing-desktop \

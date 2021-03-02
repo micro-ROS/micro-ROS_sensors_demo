@@ -1,8 +1,8 @@
 FROM ros:foxy
 
 RUN apt update \
-&&  apt install -y ros-dashing-desktop \
-&&  rm -rf /var/lib/apt/lists/*
+&& DEBIAN_FRONTEND=noninteractive apt install -y ros-foxy-desktop \ 
+&& rm -rf /var/lib/apt/lists/*
 
 WORKDIR /
 COPY ./src ./src

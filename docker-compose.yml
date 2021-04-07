@@ -11,6 +11,7 @@ services:
         volumes:
             - /dev:/dev
         network_mode: "host"
+        privileged: true
     stiot_rqt:
         build: ./dockerfile/rqt
         volumes:
